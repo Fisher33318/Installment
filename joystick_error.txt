@@ -1,0 +1,40 @@
+catkin_make
+sudo apt-get install libusb-dev
+sudo apt-get install libbluetooth-dev
+
+git clone https://github.com/abstrakraft/cwiid.git
+cd cwiid/
+
+sudo apt install autoconf
+aclocal
+autoconf
+
+./configure
+sudo apt-get install flex
+sudo apt-get install bison byacc
+
+make               //ignore error
+sudo make install
+whereis cwiid.h
+sudo apt-get install libspnav-dev
+catkin_make
+
+
+sudo apt-get install jstest-gtk
+sudo apt-get install joystick
+
+1.
+ls /dev/input/
+2.
+sudo jstest /dev/input/js?
+3.
+sudo chmod a+rw /dev/input/js?
+4.
+rosparam set joy_node/dev "/dev/input/js?"
+5.
+rosrun joy joy_node
+
+special.
+rosrun joy joy_node _dev_name:="*”
+
+

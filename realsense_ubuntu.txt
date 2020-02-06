@@ -1,0 +1,48 @@
+#Realsense SDK
+
+1.  Register the server's public key:
+
+sudo apt-key adv --keyserver keys.gnupg.net --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
+
+2.  Add the server to the list of repositories:
+
+Ubuntu 16 LTS:
+sudo add-apt-repository "deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo xenial main" -u
+Ubuntu 18 LTS:
+sudo add-apt-repository "deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo bionic main" -u
+
+3.  Install the libraries (see section below if upgrading packages):
+
+sudo apt-get install librealsense2-dkms
+sudo apt-get install librealsense2-utils
+
+4.  Reconnect the Intel RealSense depth camera and run: 
+
+realsense-viewer
+
+
+#PyRealsense
+
+1.  Run the top level CMake command with the following additional flag:
+
+    mkdir build
+    cd build
+    cmake ../ -DBUILD_PYTHON_BINDINGS:bool=true
+    make -j4
+    sudo make install
+
+2.  (TX2)update your PYTHONPATH environment variable to add the path to the pyrealsense library
+
+    export PYTHONPATH=$PYTHONPATH:/usr/local/lib
+
+!!  Alternatively
+
+    downloads https://pypi.org/project/pyrealsense2/
+    cp librealsense2.so and pyrealsense2.so to librealsense/wrappers/python/
+    (source activate envs)
+    sudo python setup.py install
+Note: Python 3 module filenames may contain additional information, e.g. pyrealsense2.cpython-35m-arm-linux-gnueabihf.so)
+
+
+
+

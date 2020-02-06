@@ -1,0 +1,9 @@
+sudo apt install libopencv-dev 
+
+./darknet detector train cfg/cup.data cfg/yolov3-tiny-cup.cfg darknet53.conv.74 >> log/robotvision.log
+
+<cfg>
+filters=(classes+5)*3
+tiny:127.135.171.177
+v3:603.610.689.696.776.783
+

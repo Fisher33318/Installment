@@ -1,0 +1,8 @@
+1. Select "Raspbian with desktop" and download ZIP **https://www.raspberrypi.org/downloads/raspbian/**
+
+2. use "Etcher" to write the Raspbian image to your SD card. 
+
+3. Enable SSH on Raspberry Pi. On your Raspberry Pi, open Terminal and type:
+$sudo raspi-config
+Navigate to Interfacing Options > SSH and select Yes.
+

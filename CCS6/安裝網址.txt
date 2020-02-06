@@ -1,0 +1,46 @@
+Like0318059
+
+
+°O±oÃö³¬¨¾¤õÀğ
+http://software-dl.ti.com/ccs/esd/documents/ccs_downloads.html
+https://www.ti.com/licreg/docs/swlicexportcontrol.tsp?form_type=2&prod_no=controlSUITE3.4.9setup.zip&ref_url=http://software-dl.ti.com/C2000/c2000_apps_public_sw/controlSUITE
+
+
+1. File > New > Target Configuration File
+Connection - (XDS100v2 USB Debug Probe)
+Board or Device - (F28M35H52C1)
+
+2. ¤pÂÎÂÎ > Debug Configuration  > Code Composer Studio 
+Target Configuration > File System choose "NewTargetConfiguration.ccxml" > Apply > Debug
+
+3. File > Import > Code Composer Studio \ CCSproject
+Browse > controlSUITE \ device_support \ f28m35x \ v207 \ ...
+
+StandAlone
+1.  Right click on your M3 project and select "Build Configurations, "Manage"
+
+2. Click "NEW", make sure the radio button for existing configuration is set to "Flash"
+
+3. Enter "Flash-Standalone" for Name:
+
+4. Enter a description such as "Standalone Operation", then select OK, and OK once more.
+
+5. Right click on your M3 project and select "Show Build Settings..."
+
+6. Use the drop down menu on the "Configuration" line, and select "Flash-Standalone"
+
+7. Select "Advanced Options", then select "Predefined Symbols"
+
+8. To the right of "Pre-define Name", you will see a green + , select this to add a new parameter
+
+9. In the box, add  "_STANDALONE" and hit OK
+
+10. Hit OK to complete the task.
+
+C28
+General > Products XDAIS ¤Ä¤Ä¥Î±¼
+
+shareram
+Properties > Linker > File search Path > wsaredram_cmd
+
+

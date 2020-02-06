@@ -1,0 +1,1106 @@
+******************************************************************************
+                  TI ARM Linker PC v5.2.5                      
+******************************************************************************
+>> Linked Mon Jun 10 19:57:48 2019
+
+OUTPUT FILE NAME:   <enet_uip_m3.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00000e05
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  OTPSECLOCK            00680800   00000004  00000000  00000004  RWIX
+  OTP_Reserved1         00680804   00000004  00000000  00000004  RWIX
+  OTP_Reserved2         00680808   00000004  00000000  00000004  RWIX
+  OTP_Z2_FLASH_START_AD 0068080c   00000004  00000000  00000004  RWIX
+  OTP_EMACID            00680810   00000008  00000000  00000008  RWIX
+  OTP_Reserved3         00680818   00000004  00000000  00000004  RWIX
+  CUSTOMER_OTP_MAIN_OSC 0068081c   00000004  00000000  00000004  RWIX
+  OTP_Reserved4         00680820   00000004  00000000  00000004  RWIX
+  OTP_BOOT_MODE_GPIO_CO 00680824   00000004  00000000  00000004  RWIX
+  OTP_Reserved5         00680828   00000004  00000000  00000004  RWIX
+  OTP_ENTRY_POINT       0068082c   00000004  00000000  00000004  RWIX
+  OTP_Reserved6         00680830   00000010  00000010  00000000  RWIX
+  INTVECS               20000000   000001b0  000001b0  00000000  RW X
+  C0                    200001b0   00001e50  00001e50  00000000  RW X
+  C1                    20002000   00002000  00002000  00000000  RW X
+  BOOT_RSVD             20004000   00000900  00000000  00000900  R  X
+  C2_1                  20004900   00000700  00000700  00000000  RW X
+  RESETISR              20005000   00000008  00000006  00000002  RW X
+  C2_2                  20005008   00000ff8  00000ff8  00000000  RW X
+  C3                    20006000   00002000  00001ffe  00000002  RW X
+  CTOMRAM               2007f000   00000800  00000000  00000800  R  X
+  MTOCRAM               2007f800   00000800  00000000  00000800  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00000008   00000000    rw-
+  00000000    00000000    00000008   00000000    rw- .sysmem
+00000000    00000000    000000c8   000000c8    r--
+  00000000    00000000    000000c8   000000c8    r-- .TI.crctab
+00000000    00000000    000000d0   000000d0    r--
+  00000000    00000000    000000d0   000000d0    r-- .cinit
+00000000    00000000    00000258   00000000    rw-
+  00000000    00000000    00000258   00000000    rw- .vtable
+00000000    00000000    00000350   00000000    rw-
+  00000000    00000000    00000350   00000000    rw- .data
+00000000    00000000    00000400   00000000    rw-
+  00000000    00000000    00000400   00000000    rw- .stack
+00000000    00000000    00000a97   00000000    rw-
+  00000000    00000000    00000a97   00000000    rw- .bss.1
+00000000    00000000    00000b34   00000b34    r--
+  00000000    00000000    00000b34   00000b34    r-- .const
+00000000    00000000    00001380   00001380    r-x
+  00000000    00000000    00001380   00001380    r-x .text.1
+00000c00    00000c00    00000080   00000000    rw-
+  00000c00    00000c00    00000080   00000000    rw- .bss.2
+00680830    00680830    00000010   00000000    rw-
+  00680830    00680830    00000010   00000000    rw- SHARERAMS2
+20000000    20000000    00004000   00004000    r-x
+  20000000    20000000    000001b0   000001b0    r-- .intvecs
+  200001b0    200001b0    00001e50   00001e50    r-x .text.2
+  20002000    20002000    00002000   00002000    r-x .text.3
+20004900    20004900    000036fe   000036fe    r-x
+  20004900    20004900    00000700   00000700    r-x .text.4
+  20005000    20005000    00000006   00000006    r-x .resetisr
+  20005008    20005008    00000ff8   00000ff8    r-x .text.5
+  20006000    20006000    00001ffe   00001ffe    r-x .text.6
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.cinit     0    00000000    000000d0     FAILED TO ALLOCATE
+.sysmem    0    00000000    00000008     FAILED TO ALLOCATE
+.stack     0    00000000    00000400     FAILED TO ALLOCATE
+.TI.crctab 
+*          0    00000000    000000c8     FAILED TO ALLOCATE
+SHARERAMS2 
+*          0    00680830    00000010     UNINITIALIZED
+                  00680830    00000010     enet_uip.obj (SHARERAMS2)
+
+.intvecs   0    20000000    000001b0     
+                  20000000    000001b0     startup_ccs.obj (.intvecs)
+
+.resetisr 
+*          0    20005000    00000006     
+                  20005000    00000006     startup_ccs.obj (.resetisr:ResetISR)
+
+GETBUFFER 
+*          0    2007f000    00000000     DSECT
+
+GETWRITEIDX 
+*          0    2007f000    00000000     DSECT
+
+PUTREADIDX 
+*          0    2007f000    00000000     DSECT
+
+.text.1    0    00000000    00001380     FAILED TO ALLOCATE
+.const     0    00000000    00000b34     FAILED TO ALLOCATE
+.vtable    0    00000000    00000258     FAILED TO ALLOCATE
+.data      0    00000000    00000350     FAILED TO ALLOCATE
+.bss.1     0    00000000    00000a97     FAILED TO ALLOCATE
+.bss.2     0    00000c00    00000080     FAILED TO ALLOCATE
+.text.2    0    200001b0    00001e50     
+                  200001b0    00001258     uip.obj (.text:uip_process)
+                  20001408    00000a58     driverlib.lib : sysctl.obj (.text)
+                  20001e60    0000019c     httpd.obj (.text:httpd_parse_command_word)
+                  20001ffc    00000004     driverlib.lib : cpu.obj (.text:CPUwfi)
+
+.text.3    0    20002000    00002000     
+                  20002000    0000109a     rtsv7M3_T_le_eabi.lib : _printfi.obj (.text)
+                  2000309a    00000002     startup_ccs.obj (.text:FaultISR)
+                  2000309c    00000584     driverlib.lib : ipc_lite.obj (.text)
+                  20003620    00000540     enet_uip.obj (.text:main)
+                  20003b60    00000480     driverlib.lib : gpio.obj (.text)
+                  20003fe0    00000020     rtsv7M3_T_le_eabi.lib : memchr.obj (.text)
+
+.text.4    0    20004900    00000700     
+                  20004900    00000430     ustdlib.obj (.text:uvsnprintf)
+                  20004d30    000002d0     driverlib.lib : interrupt.obj (.text)
+
+.text.5    0    20005008    00000ff8     
+                  20005008    000003dc     rtsv7M3_T_le_eabi.lib : memory.obj (.text)
+                  200053e4    00000314     driverlib.lib : ethernet.obj (.text)
+                  200056f8    0000030c     rtsv7M3_T_le_eabi.lib : lowlev.obj (.text)
+                  20005a04    000002fc     driverlib.lib : udma.obj (.text)
+                  20005d00    000002d4     rtsv7M3_T_le_eabi.lib : trgdrv.obj (.text)
+                  20005fd4    0000002c     enet_uip.obj (.text:SysTickIntHandler)
+
+.text.6    0    20006000    00001ffe     
+                  20006000    00000238     rtsv7M3_T_le_eabi.lib : strtod.obj (.text)
+                  20006238    000001fc     set_pinout_f28m35x.obj (.text:PortControlSet)
+                  20006434    000001f8     uip_arp.obj (.text:uip_arp_out)
+                  2000662c    000001f4     rtsv7M3_T_le_eabi.lib : ull_div_t2.obj (.text)
+                  20006820    000001c4                           : fopen.obj (.text)
+                  200069e4    000001b6                           : fd_add_t2.obj (.text)
+                  20006b9a    00000002     startup_ccs.obj (.text:IntDefaultHandler)
+                  20006b9c    000001b4     httpd.obj (.text:httpd_appcall)
+                  20006d50    00000180     dhcpc.obj (.text:handle_dhcp)
+                  20006ed0    00000154     enet_uip.obj (.text:EthernetPacketGetDMA)
+                  20007024    00000140     uip_arp.obj (.text:uip_arp_update)
+                  20007164    00000136     rtsv7M3_T_le_eabi.lib : fd_div_t2.obj (.text)
+                  2000729a    00000002     startup_ccs.obj (.text:NmiSR)
+                  2000729c    00000134     rtsv7M3_T_le_eabi.lib : fputs.obj (.text)
+                  200073d0    0000012c     uip_arp.obj (.text:uip_arp_arpin)
+                  200074fc    00000110     rtsv7M3_T_le_eabi.lib : xdscale.obj (.text)
+                  2000760c    00000108     driverlib.lib : ram.obj (.text)
+                  20007714    000000fc     rtsv7M3_T_le_eabi.lib : fd_mul_t2.obj (.text)
+                  20007810    000000dc                           : setvbuf.obj (.text)
+                  200078ec    000000d0     enet_uip.obj (.text:EthernetIntHandler)
+                  200079bc    000000c8     enet_uip.obj (.text:EthernetPacketPutDMA)
+                  20007a84    000000c8     dhcpc.obj (.text:parse_options)
+                  20007b4c    000000c8     rtsv7M3_T_le_eabi.lib : fflush.obj (.text)
+                  20007c14    000000be                           : xdnorm.obj (.text)
+                  20007cd2    00000002                           : i_div0.obj (.text)
+                  20007cd4    000000b0     dhcpc.obj (.text:create_msg)
+                  20007d84    000000ac     driverlib.lib : watchdog.obj (.text)
+                  20007e30    000000ac     rtsv7M3_T_le_eabi.lib : _io_perm.obj (.text)
+                  20007edc    000000a8     uip.obj (.text:uip_add32)
+                  20007f84    0000007a     rtsv7M3_T_le_eabi.lib : memset_t2.obj (.text)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 000000a8 records: 5, size/record: 8, table size: 40
+	.data: load addr=00000000, load size=0000007a bytes, run addr=00000000, run size=00000350 bytes, compression=rle
+	.bss.1: load addr=00000088, load size=00000008 bytes, run addr=00000000, run size=00000a97 bytes, compression=zero_init
+	.bss.2: load addr=00000090, load size=00000008 bytes, run addr=00000c00, run size=00000080 bytes, compression=zero_init
+	.vtable: load addr=00000098, load size=00000008 bytes, run addr=00000000, run size=00000258 bytes, compression=zero_init
+	SHARERAMS2: load addr=000000a0, load size=00000008 bytes, run addr=00680830, run size=00000010 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 0000007c records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_zero_init
+	index: 1, handler: __TI_decompress_rle24
+	index: 2, handler: __TI_decompress_none
+
+
+LINKER GENERATED CRC TABLES
+
+AppCrc @ 00000000 records: 8, size/record: 24, table size: 200
+	.cinit: algorithm=CRC32_PRIME(ID=0), load addr=00000000, size=000000d0, CRC=00000000a4c3f04c
+	.text.1: algorithm=CRC32_PRIME(ID=0), load addr=00000000, size=00001380, CRC=00000000c91db49b
+	.const: algorithm=CRC32_PRIME(ID=0), load addr=00000000, size=00000b34, CRC=0000000065855b2f
+	.text.2: algorithm=CRC32_PRIME(ID=0), load addr=200001b0, size=00001e50, CRC=000000007bee6024
+	.text.3: algorithm=CRC32_PRIME(ID=0), load addr=20002000, size=00002000, CRC=00000000d38e865e
+	.text.4: algorithm=CRC32_PRIME(ID=0), load addr=20004900, size=00000700, CRC=0000000073668796
+	.text.5: algorithm=CRC32_PRIME(ID=0), load addr=20005008, size=00000ff8, CRC=00000000d400aea0
+	.text.6: algorithm=CRC32_PRIME(ID=0), load addr=20006000, size=00001ffe, CRC=00000000171c495d
+
+
+FAR CALL TRAMPOLINES
+
+callee name               trampoline name
+   callee addr  tramp addr   call addr  call info
+--------------  -----------  ---------  ----------------
+__TI_doflush              $Tramp$TT$L$PI$$__TI_doflush
+   20007b4d     000012c0     000001f2   rtsv7M3_T_le_eabi.lib : fclose.obj (.text)
+                             000002a4                         : fputc.obj (.text)
+                             000002c0                         : fputc.obj (.text)
+                             00000882                         : fseek.obj (.text)
+free                      $Tramp$TT$L$PI$$free
+   200050ff     000012c8     00000208   rtsv7M3_T_le_eabi.lib : fclose.obj (.text)
+close                     $Tramp$TT$L$PI$$close
+   20005909     000012d0     0000021e   rtsv7M3_T_le_eabi.lib : fclose.obj (.text)
+unlink                    $Tramp$TT$L$PI$$unlink
+   20005789     000012d8     00000238   rtsv7M3_T_le_eabi.lib : fclose.obj (.text)
+__TI_wrt_ok               $Tramp$TT$L$PI$$__TI_wrt_ok
+   20007e31     000012e0     00000286   rtsv7M3_T_le_eabi.lib : fputc.obj (.text)
+write                     $Tramp$TT$L$PI$$write
+   200056f9     000012e8     000002d8   rtsv7M3_T_le_eabi.lib : fputc.obj (.text)
+IntRegister               $Tramp$TT$L$PI$$IntRegister
+   20004d63     000012f0     0000043a   driverlib.lib : systick.obj (.text)
+IntUnregister             $Tramp$TT$L$PI$$IntUnregister
+   20004d8d     000012f8     00000456   driverlib.lib : systick.obj (.text)
+fputs                     $Tramp$TT$L$PI$$fputs
+   2000729d     00001300     00000498   rtsv7M3_T_le_eabi.lib : printf.obj (.text)
+__TI_printfi              $Tramp$TT$L$PI$$__TI_printfi
+   20002d95     00001308     000004da   rtsv7M3_T_le_eabi.lib : printf.obj (.text)
+memset                    $Tramp$TT$L$PI$$memset
+   20007f8d     00001310     00000628   uip_arp.obj (.text:uip_arp_timer)
+                             0000068a   rtsv7M3_T_le_eabi.lib : copy_decompress_rle.obj (.text)
+                             00001278                         : copy_zero_init.obj (.text:decompress:ZI)
+parse_options             $Tramp$TT$L$PI$$parse_options
+   20007a85     00001318     000006fc   dhcpc.obj (.text:parse_msg)
+_Dnorm                    $Tramp$TT$L$PI$$_Dnorm
+   20007c15     00001320     000007a2   rtsv7M3_T_le_eabi.lib : xdunscal.obj (.text)
+SysCtlPeripheralEnable    $Tramp$TT$L$PI$$SysCtlPeripheralEnable
+   20001585     00001328     000007f4   set_pinout_f28m35x.obj (.text:PinoutSet)
+                             000007fa   set_pinout_f28m35x.obj (.text:PinoutSet)
+                             00000800   set_pinout_f28m35x.obj (.text:PinoutSet)
+                             00000806   set_pinout_f28m35x.obj (.text:PinoutSet)
+                             0000080c   set_pinout_f28m35x.obj (.text:PinoutSet)
+                             00000812   set_pinout_f28m35x.obj (.text:PinoutSet)
+                             00000818   set_pinout_f28m35x.obj (.text:PinoutSet)
+                             0000081e   set_pinout_f28m35x.obj (.text:PinoutSet)
+                             00000824   set_pinout_f28m35x.obj (.text:PinoutSet)
+PortControlSet            $Tramp$TT$L$PI$$PortControlSet
+   20006239     00001330     00000828   set_pinout_f28m35x.obj (.text:PinoutSet)
+lseek                     $Tramp$TT$L$PI$$lseek
+   200058e5     00001338     00000894   rtsv7M3_T_le_eabi.lib : fseek.obj (.text)
+uip_add32                 $Tramp$TT$L$PI$$uip_add32
+   20007edd     00001340     00000a30   uip.obj (.text:uip_add_rcv_nxt)
+create_msg                $Tramp$TT$L$PI$$create_msg
+   20007cd5     00001348     00000bf6   dhcpc.obj (.text:send_request)
+                             00000d8e   dhcpc.obj (.text:send_discover)
+_Dscale                   $Tramp$TT$L$PI$$_Dscale
+   200074fd     00001350     00000c60   rtsv7M3_T_le_eabi.lib : ldexp.obj (.text)
+__aeabi_idiv0             $Tramp$TT$L$PI$$__aeabi_idiv0
+   20007cd3     00001358     00000d7e   rtsv7M3_T_le_eabi.lib : u_divt2.obj (.text)
+uvsnprintf                $Tramp$TT$L$PI$$uvsnprintf
+   20004901     00001360     00000f38   ustdlib.obj (.text:usprintf)
+main                      $Tramp$TT$L$PI$$main
+   20003621     00001368     0000119c   rtsv7M3_T_le_eabi.lib : args_main.obj (.text)
+handle_dhcp               $Tramp$TT$L$PI$$handle_dhcp
+   20006d51     00001370     000012a0   dhcpc.obj (.text:dhcpc_appcall)
+strtod                    $Tramp$TT$L$PI$$strtod
+   20006001     00001378     000012b6   rtsv7M3_T_le_eabi.lib : atof.obj (.text)
+
+[24 trampolines]
+[38 trampoline calls]
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                            
+-------   ----                            
+00000000  AppCrc                          
+00000cc1  C$$EXIT                         
+0000074f  C$$IO$$                         
+0000124b  CPUcpsid                        
+00001257  CPUcpsie                        
+20001ffd  CPUwfi                          
+20005421  EthernetConfigGet               
+200053f5  EthernetConfigSet               
+200054b5  EthernetDisable                 
+20005493  EthernetEnable                  
+200053e5  EthernetInitExpClk              
+20005677  EthernetIntClear                
+20005661  EthernetIntDisable              
+20005659  EthernetIntEnable               
+200078ed  EthernetIntHandler              
+20005639  EthernetIntRegister             
+2000566b  EthernetIntStatus               
+20005649  EthernetIntUnregister           
+20005469  EthernetMACAddrGet              
+2000543b  EthernetMACAddrSet              
+200056bb  EthernetPHYPowerOff             
+200056d7  EthernetPHYPowerOn              
+2000569b  EthernetPHYRead                 
+2000567b  EthernetPHYWrite                
+200054d7  EthernetPacketAvail             
+2000558f  EthernetPacketGet               
+20006ed1  EthernetPacketGetDMA            
+2000557f  EthernetPacketGetNonBlocking    
+2000562f  EthernetPacketPut               
+2000561f  EthernetPacketPutNonBlocking    
+000008b9  EthernetProcessCMD              
+200054e5  EthernetSpaceAvail              
+20003c33  GPIODirModeGet                  
+20003c03  GPIODirModeSet                  
+20003ca3  GPIOIntTypeGet                  
+20003c5d  GPIOIntTypeSet                  
+20003d37  GPIOPadConfigGet                
+20003cdd  GPIOPadConfigSet                
+20003ef9  GPIOPinConfigure                
+20003f5f  GPIOPinConfigureCoreSelect      
+20003d9b  GPIOPinIntClear                 
+20003d7f  GPIOPinIntDisable               
+20003d73  GPIOPinIntEnable                
+20003d8d  GPIOPinIntStatus                
+20003f89  GPIOPinLock                     
+20003f7f  GPIOPinLockStatus               
+20003dcd  GPIOPinRead                     
+20003dd9  GPIOPinTypeCAN                  
+20003ee5  GPIOPinTypeEPI                  
+20003ded  GPIOPinTypeGPIOInput            
+20003e01  GPIOPinTypeGPIOOutput           
+20003e43  GPIOPinTypeGPIOOutputHigh       
+20003e29  GPIOPinTypeGPIOOutputLow        
+20003e15  GPIOPinTypeGPIOOutputOD         
+20003e5d  GPIOPinTypeI2C                  
+20003e71  GPIOPinTypeSSI                  
+20003e8d  GPIOPinTypeTimer                
+20003ea1  GPIOPinTypeUART                 
+20003ed1  GPIOPinTypeUSBAnalog            
+20003eb9  GPIOPinTypeUSBDigital           
+20003faf  GPIOPinUnlock                   
+20003dd3  GPIOPinWrite                    
+20003da1  GPIOPortIntRegister             
+20003db9  GPIOPortIntUnregister           
+20005f8d  HOSTclock                       
+20005f55  HOSTclose                       
+20005f17  HOSTgetenv                      
+20005ebb  HOSTlseek                       
+20005e69  HOSTopen                        
+20005e1d  HOSTread                        
+20005dbf  HOSTrename                      
+20005d85  HOSTtime                        
+20005d4d  HOSTunlink                      
+20005d01  HOSTwrite                       
+20003431  IPCLiteCtoMClearBits            
+20003491  IPCLiteCtoMClearBits_Protected  
+2000330d  IPCLiteCtoMDataRead             
+20003507  IPCLiteCtoMDataWrite            
+20003561  IPCLiteCtoMDataWrite_Protected  
+200035c7  IPCLiteCtoMFunctionCall         
+20003355  IPCLiteCtoMSetBits              
+200033b9  IPCLiteCtoMSetBits_Protected    
+200032e5  IPCLiteMtoCBootBranch           
+200031b3  IPCLiteMtoCClearBits            
+200031fb  IPCLiteMtoCClearBits_Protected  
+200030c5  IPCLiteMtoCDataRead             
+20003243  IPCLiteMtoCDataWrite            
+2000327d  IPCLiteMtoCDataWrite_Protected  
+200032b7  IPCLiteMtoCFunctionCall         
+2000309d  IPCLiteMtoCGetResult            
+20003103  IPCLiteMtoCSetBits              
+2000315b  IPCLiteMtoCSetBits_Protected    
+20004e8d  IntDisable                      
+20004e11  IntEnable                       
+20004d47  IntFlashVTable                  
+20004d3d  IntMasterDisable                
+20004d33  IntMasterEnable                 
+20004f77  IntPendClear                    
+20004f0b  IntPendSet                      
+20004df7  IntPriorityGet                  
+20004da9  IntPriorityGroupingGet          
+20004d97  IntPriorityGroupingSet          
+20004dcb  IntPrioritySet                  
+20004d55  IntRAMVTable                    
+20004d63  IntRegister                     
+20004d8d  IntUnregister                   
+000007f1  PinoutSet                       
+2000769d  RAMControlInitL0L3Ram           
+20007633  RAMControlInitM1MsgRam          
+2000760d  RAMMReqSharedMemAccess          
+20005001  ResetISR                        
+UNDEFED   SHT$$INIT_ARRAY$$Base           
+UNDEFED   SHT$$INIT_ARRAY$$Limit          
+00000915  Shared_Ram_dataWrite_m3         
+00000c7d  ShowIPAddress                   
+20001bcf  SysCtlC28Disable                
+20001bb7  SysCtlC28Enable                 
+20001ae7  SysCtlClockConfigGet            
+20001a6d  SysCtlClockConfigSet            
+20001791  SysCtlClockDividersSet          
+20001b41  SysCtlClockGet                  
+200018d5  SysCtlClockPllConfig            
+200016bf  SysCtlDeepSleep                 
+000012a9  SysCtlDelay                     
+20001d2d  SysCtlEnableAERRNMI             
+20001427  SysCtlFlashSizeGet              
+20001c09  SysCtlGPIOAHBDisable            
+20001be7  SysCtlGPIOAHBEnable             
+20001d45  SysCtlGetNmiConfig              
+20001d65  SysCtlGetNmiFlagStatus          
+20001d51  SysCtlGetNmiInterruptStatus     
+20001db3  SysCtlHoldSubSystemInReset      
+20001d7f  SysCtlNmiFlgClr                 
+20001d97  SysCtlNmiFlgClrAll              
+20001d6d  SysCtlNmiIsSet                  
+20001693  SysCtlPeripheralClockGating     
+2000166b  SysCtlPeripheralDeepSleepDisable
+20001643  SysCtlPeripheralDeepSleepEnable 
+200015ad  SysCtlPeripheralDisable         
+20001585  SysCtlPeripheralEnable          
+200015d5  SysCtlPeripheralIsEnabled       
+20001433  SysCtlPeripheralPresent         
+20001497  SysCtlPeripheralReset           
+2000161b  SysCtlPeripheralSleepDisable    
+200015f3  SysCtlPeripheralSleepEnable     
+2000189d  SysCtlPowerOffPLL               
+20001dd9  SysCtlReleaseSubSystemFromReset 
+200016b7  SysCtlReset                     
+200016e1  SysCtlResetCauseClear           
+200016d9  SysCtlResetCauseGet             
+20001409  SysCtlSRAMSizeGet               
+20001ffd  SysCtlSleep                     
+20001dfb  SysCtlSubSystemReset            
+20001d0f  SysCtlUSBPLLConfigGet           
+20001c7d  SysCtlUSBPLLConfigSet           
+20001c5d  SysCtlUSBPLLDisable             
+20001c2b  SysCtlUSBPLLEnable              
+200016f5  SysCtlXPllClockDividerSet       
+00000429  SysTickDisable                  
+0000041d  SysTickEnable                   
+00000467  SysTickIntDisable               
+0000045b  SysTickIntEnable                
+20005fd5  SysTickIntHandler               
+00000435  SysTickIntRegister              
+0000044b  SysTickIntUnregister            
+0000047d  SysTickPeriodGet                
+00000473  SysTickPeriodSet                
+00000487  SysTickValueGet                 
+20007d8d  WatchdogEnable                  
+20007e09  WatchdogIntClear                
+20007df5  WatchdogIntEnable               
+20007dd5  WatchdogIntRegister             
+20007dff  WatchdogIntStatus               
+20007de5  WatchdogIntUnregister           
+20007dab  WatchdogLock                    
+20007dbb  WatchdogLockState               
+20007dcd  WatchdogReloadGet               
+20007dc9  WatchdogReloadSet               
+20007da1  WatchdogResetDisable            
+20007d97  WatchdogResetEnable             
+20007d85  WatchdogRunning                 
+20007e1d  WatchdogStallDisable            
+20007e0f  WatchdogStallEnable             
+20007db3  WatchdogUnlock                  
+20007dd1  WatchdogValueGet                
+000010c9  _Dclass                         
+00000270  _Denorm                         
+20007c15  _Dnorm                          
+200074fd  _Dscale                         
+00000789  _Dunscale                       
+00000280  _Eps                            
+00000344  _Errno                          
+00000330  _Fenv                           
+0000100d  _Feraise                        
+00000290  _Hugeval                        
+000002a0  _Inf                            
+000002b0  _Nan                            
+000002d0  _Rteps                          
+000002c0  _Snan                           
+00000334  _Tls_setup__Fenv                
+000002e0  _Xbig                           
+000002e8  _Zero                           
+00000644  __CIOBUF_                       
+00000400  __STACK_END                     
+00000400  __STACK_SIZE                    
+00000008  __SYSMEM_SIZE                   
+000000a8  __TI_CINIT_Base                 
+000000d0  __TI_CINIT_Limit                
+00000000  __TI_CRC_AppCrc                 
+0000007c  __TI_Handler_Table_Base         
+00000088  __TI_Handler_Table_Limit        
+00000575  __TI_auto_init                  
+200068e9  __TI_cleanup                    
+00000328  __TI_cleanup_ptr                
+000001e1  __TI_closefile                  
+0000123d  __TI_decompress_none            
+000012af  __TI_decompress_rle24           
+20007b4d  __TI_doflush                    
+0000032c  __TI_dtors_ptr                  
+00000304  __TI_ft_end                     
+20002d95  __TI_printfi                    
+20007e93  __TI_rd_ok                      
+00000753  __TI_readmsg                    
+00000000  __TI_static_base__              
+00000864  __TI_tmpnams                    
+00000721  __TI_writemsg                   
+20007e31  __TI_wrt_ok                     
+00001271  __TI_zero_init                  
+00000311  __aeabi_cdcmpeq                 
+00000311  __aeabi_cdcmple                 
+00000397  __aeabi_cdrcmple                
+00000ba5  __aeabi_d2f                     
+00000b5d  __aeabi_d2iz                    
+200069ef  __aeabi_dadd                    
+20007165  __aeabi_ddiv                    
+20007715  __aeabi_dmul                    
+200069e5  __aeabi_dsub                    
+00000e41  __aeabi_f2iz                    
+0000106d  __aeabi_i2d                     
+20007cd3  __aeabi_idiv0                   
+20007f85  __aeabi_memclr                  
+20007f85  __aeabi_memclr4                 
+20007f85  __aeabi_memclr8                 
+000000a7  __aeabi_memcpy                  
+000000a7  __aeabi_memcpy4                 
+000000a7  __aeabi_memcpy8                 
+20007f87  __aeabi_memset                  
+20007f87  __aeabi_memset4                 
+20007f87  __aeabi_memset8                 
+00000310  __aeabi_stderr                  
+00000308  __aeabi_stdin                   
+0000030c  __aeabi_stdout                  
+00000d45  __aeabi_uidiv                   
+00000d45  __aeabi_uidivmod                
+2000662d  __aeabi_uldivmod                
+ffffffff  __binit__                       
+ffffffff  __c_args__                      
+00000000  __stack                         
+0000118d  _args_main                      
+00000e05  _c_int00                        
+0000076b  _ctypes_                        
+00000000  _ftable                         
+00000320  _lock                           
+00001223  _nop                            
+0000121b  _register_lock                  
+00001215  _register_unlock                
+00000000  _sys_memory                     
+000012bb  _system_pre_init                
+00000324  _unlock                         
+00000cc5  abort                           
+20005959  add_device                      
+000012b5  atof                            
+00000ac5  atoi                            
+ffffffff  binit                           
+00000a0c  buffer                          
+00000300  buffer_pointer                  
+200053b1  calloc                          
+00001265  clock_time                      
+20005909  close                           
+00000b11  copy_in                         
+0000129f  dhcpc_appcall                   
+00000971  dhcpc_configured                
+0000033c  empty_char                      
+00000ccd  exit                            
+00000247  fclose                          
+00000ee5  feraiseexcept                   
+20007b99  fflush                          
+2000693f  fopen                           
+00000279  fputc                           
+2000729d  fputs                           
+200050ff  free                            
+20006915  freopen                         
+000010f3  frexp                           
+00000855  fseek                           
+00000000  g_pfnRAMVectors                 
+20000000  g_pfnVectors                    
+00000c00  g_sDMAControlTable              
+000002f0  g_ulTickCounter                 
+00000a44  hs                              
+00001155  htons                           
+20006b9d  httpd_appcall                   
+0000127d  httpd_clear_command             
+00000eb1  httpd_get_command               
+00001289  httpd_init                      
+20001e61  httpd_parse_command_word        
+000002fc  i                               
+00000c35  ldexp                           
+00000a50  left_cmd                        
+200058e5  lseek                           
+000009c9  ltoa                            
+00680830  m3_r_w_array                    
+20003621  main                            
+0000034c  main_func_sp                    
+20005097  malloc                          
+200052cd  memalign                        
+00001171  memccpy                         
+20003fe1  memchr                          
+00001115  memcmp                          
+000000a7  memcpy                          
+20007f8d  memset                          
+20005009  minit                           
+00000a54  omega_cmd                       
+20005837  open                            
+0000049d  printf                          
+00000279  putc                            
+000002fd  putchar                         
+200073a7  puts                            
+0000109b  raise                           
+20005813  read                            
+200051c1  realloc                         
+20005789  remove                          
+200057eb  remove_device                   
+200057ad  rename                          
+00000a1c  response_to_client              
+00000a58  right_cmd                       
+20007811  setvbuf                         
+00000d05  signal                          
+000011d3  strchr                          
+000011a5  strcmp                          
+000011e9  strcpy                          
+00001229  strlen                          
+00000fdd  strncpy                         
+20006001  strtod                          
+20006001  strtold                         
+00001137  timer_expired                   
+000011ff  timer_set                       
+20005c6d  uDMAChannel0_7SelectAltMapping  
+20005c61  uDMAChannel0_7SelectDefault     
+20005c9f  uDMAChannel16_23SelectAltMapping
+20005c91  uDMAChannel16_23SelectDefault   
+20005cb9  uDMAChannel24_31SelectAltMapping
+20005cab  uDMAChannel24_31SelectDefault   
+20005c85  uDMAChannel8_15SelectAltMapping 
+20005c77  uDMAChannel8_15SelectDefault    
+20005abb  uDMAChannelAttributeDisable     
+20005a7d  uDMAChannelAttributeEnable      
+20005af9  uDMAChannelAttributeGet         
+20005b49  uDMAChannelControlSet           
+20005a35  uDMAChannelDisable              
+20005a27  uDMAChannelEnable               
+20005a43  uDMAChannelIsEnabled            
+20005c3d  uDMAChannelModeGet              
+20005a6b  uDMAChannelRequest              
+20005bd9  uDMAChannelScatterGatherSet     
+20005c21  uDMAChannelSizeGet              
+20005b63  uDMAChannelTransferSet          
+20005a63  uDMAControlAlternateBaseGet     
+20005a5b  uDMAControlBaseGet              
+20005a53  uDMAControlBaseSet              
+20005a0d  uDMADisable                     
+20005a05  uDMAEnable                      
+20005a1d  uDMAErrorStatusClear            
+20005a15  uDMAErrorStatusGet              
+20005cc5  uDMAIntRegister                 
+20005cd5  uDMAIntUnregister               
+00000000  ucUIPBuffer                     
+00000a60  uip_acc32                       
+20007edd  uip_add32                       
+00000a64  uip_appdata                     
+200073d1  uip_arp_arpin                   
+20006435  uip_arp_out                     
+000005e1  uip_arp_timer                   
+00000a68  uip_buf                         
+00000a6c  uip_conn                        
+00000964  uip_conns                       
+00000a70  uip_draddr                      
+0000033e  uip_ethaddr                     
+00000a96  uip_flags                       
+00000a74  uip_hostaddr                    
+00000145  uip_init                        
+0000103d  uip_ipchksum                    
+00000a8c  uip_len                         
+00000a75  uip_listen                      
+00000a24  uip_listenports                 
+00000a78  uip_netmask                     
+200001b1  uip_process                     
+00000a7c  uip_sappdata                    
+00000e79  uip_send                        
+00000a8e  uip_slen                        
+000009d8  uip_stat                        
+00001295  uip_tcpchksum                   
+00000a80  uip_udp_conn                    
+00000764  uip_udp_conns                   
+20005789  unlink                          
+00000a2c  url_data                        
+00000f19  usprintf                        
+20004901  uvsnprintf                      
+00000a84  velocity_cmd                    
+200056f9  write                           
+000002f4  x                               
+000002f8  y                               
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                            
+-------   ----                            
+00000000  AppCrc                          
+00000000  __TI_CRC_AppCrc                 
+00000000  __TI_static_base__              
+00000000  __stack                         
+00000000  _ftable                         
+00000000  _sys_memory                     
+00000000  g_pfnRAMVectors                 
+00000000  ucUIPBuffer                     
+00000008  __SYSMEM_SIZE                   
+0000007c  __TI_Handler_Table_Base         
+00000088  __TI_Handler_Table_Limit        
+000000a7  __aeabi_memcpy                  
+000000a7  __aeabi_memcpy4                 
+000000a7  __aeabi_memcpy8                 
+000000a7  memcpy                          
+000000a8  __TI_CINIT_Base                 
+000000d0  __TI_CINIT_Limit                
+00000145  uip_init                        
+000001e1  __TI_closefile                  
+00000247  fclose                          
+00000270  _Denorm                         
+00000279  fputc                           
+00000279  putc                            
+00000280  _Eps                            
+00000290  _Hugeval                        
+000002a0  _Inf                            
+000002b0  _Nan                            
+000002c0  _Snan                           
+000002d0  _Rteps                          
+000002e0  _Xbig                           
+000002e8  _Zero                           
+000002f0  g_ulTickCounter                 
+000002f4  x                               
+000002f8  y                               
+000002fc  i                               
+000002fd  putchar                         
+00000300  buffer_pointer                  
+00000304  __TI_ft_end                     
+00000308  __aeabi_stdin                   
+0000030c  __aeabi_stdout                  
+00000310  __aeabi_stderr                  
+00000311  __aeabi_cdcmpeq                 
+00000311  __aeabi_cdcmple                 
+00000320  _lock                           
+00000324  _unlock                         
+00000328  __TI_cleanup_ptr                
+0000032c  __TI_dtors_ptr                  
+00000330  _Fenv                           
+00000334  _Tls_setup__Fenv                
+0000033c  empty_char                      
+0000033e  uip_ethaddr                     
+00000344  _Errno                          
+0000034c  main_func_sp                    
+00000397  __aeabi_cdrcmple                
+00000400  __STACK_END                     
+00000400  __STACK_SIZE                    
+0000041d  SysTickEnable                   
+00000429  SysTickDisable                  
+00000435  SysTickIntRegister              
+0000044b  SysTickIntUnregister            
+0000045b  SysTickIntEnable                
+00000467  SysTickIntDisable               
+00000473  SysTickPeriodSet                
+0000047d  SysTickPeriodGet                
+00000487  SysTickValueGet                 
+0000049d  printf                          
+00000575  __TI_auto_init                  
+000005e1  uip_arp_timer                   
+00000644  __CIOBUF_                       
+00000721  __TI_writemsg                   
+0000074f  C$$IO$$                         
+00000753  __TI_readmsg                    
+00000764  uip_udp_conns                   
+0000076b  _ctypes_                        
+00000789  _Dunscale                       
+000007f1  PinoutSet                       
+00000855  fseek                           
+00000864  __TI_tmpnams                    
+000008b9  EthernetProcessCMD              
+00000915  Shared_Ram_dataWrite_m3         
+00000964  uip_conns                       
+00000971  dhcpc_configured                
+000009c9  ltoa                            
+000009d8  uip_stat                        
+00000a0c  buffer                          
+00000a1c  response_to_client              
+00000a24  uip_listenports                 
+00000a2c  url_data                        
+00000a44  hs                              
+00000a50  left_cmd                        
+00000a54  omega_cmd                       
+00000a58  right_cmd                       
+00000a60  uip_acc32                       
+00000a64  uip_appdata                     
+00000a68  uip_buf                         
+00000a6c  uip_conn                        
+00000a70  uip_draddr                      
+00000a74  uip_hostaddr                    
+00000a75  uip_listen                      
+00000a78  uip_netmask                     
+00000a7c  uip_sappdata                    
+00000a80  uip_udp_conn                    
+00000a84  velocity_cmd                    
+00000a8c  uip_len                         
+00000a8e  uip_slen                        
+00000a96  uip_flags                       
+00000ac5  atoi                            
+00000b11  copy_in                         
+00000b5d  __aeabi_d2iz                    
+00000ba5  __aeabi_d2f                     
+00000c00  g_sDMAControlTable              
+00000c35  ldexp                           
+00000c7d  ShowIPAddress                   
+00000cc1  C$$EXIT                         
+00000cc5  abort                           
+00000ccd  exit                            
+00000d05  signal                          
+00000d45  __aeabi_uidiv                   
+00000d45  __aeabi_uidivmod                
+00000e05  _c_int00                        
+00000e41  __aeabi_f2iz                    
+00000e79  uip_send                        
+00000eb1  httpd_get_command               
+00000ee5  feraiseexcept                   
+00000f19  usprintf                        
+00000fdd  strncpy                         
+0000100d  _Feraise                        
+0000103d  uip_ipchksum                    
+0000106d  __aeabi_i2d                     
+0000109b  raise                           
+000010c9  _Dclass                         
+000010f3  frexp                           
+00001115  memcmp                          
+00001137  timer_expired                   
+00001155  htons                           
+00001171  memccpy                         
+0000118d  _args_main                      
+000011a5  strcmp                          
+000011d3  strchr                          
+000011e9  strcpy                          
+000011ff  timer_set                       
+00001215  _register_unlock                
+0000121b  _register_lock                  
+00001223  _nop                            
+00001229  strlen                          
+0000123d  __TI_decompress_none            
+0000124b  CPUcpsid                        
+00001257  CPUcpsie                        
+00001265  clock_time                      
+00001271  __TI_zero_init                  
+0000127d  httpd_clear_command             
+00001289  httpd_init                      
+00001295  uip_tcpchksum                   
+0000129f  dhcpc_appcall                   
+000012a9  SysCtlDelay                     
+000012af  __TI_decompress_rle24           
+000012b5  atof                            
+000012bb  _system_pre_init                
+00680830  m3_r_w_array                    
+20000000  g_pfnVectors                    
+200001b1  uip_process                     
+20001409  SysCtlSRAMSizeGet               
+20001427  SysCtlFlashSizeGet              
+20001433  SysCtlPeripheralPresent         
+20001497  SysCtlPeripheralReset           
+20001585  SysCtlPeripheralEnable          
+200015ad  SysCtlPeripheralDisable         
+200015d5  SysCtlPeripheralIsEnabled       
+200015f3  SysCtlPeripheralSleepEnable     
+2000161b  SysCtlPeripheralSleepDisable    
+20001643  SysCtlPeripheralDeepSleepEnable 
+2000166b  SysCtlPeripheralDeepSleepDisable
+20001693  SysCtlPeripheralClockGating     
+200016b7  SysCtlReset                     
+200016bf  SysCtlDeepSleep                 
+200016d9  SysCtlResetCauseGet             
+200016e1  SysCtlResetCauseClear           
+200016f5  SysCtlXPllClockDividerSet       
+20001791  SysCtlClockDividersSet          
+2000189d  SysCtlPowerOffPLL               
+200018d5  SysCtlClockPllConfig            
+20001a6d  SysCtlClockConfigSet            
+20001ae7  SysCtlClockConfigGet            
+20001b41  SysCtlClockGet                  
+20001bb7  SysCtlC28Enable                 
+20001bcf  SysCtlC28Disable                
+20001be7  SysCtlGPIOAHBEnable             
+20001c09  SysCtlGPIOAHBDisable            
+20001c2b  SysCtlUSBPLLEnable              
+20001c5d  SysCtlUSBPLLDisable             
+20001c7d  SysCtlUSBPLLConfigSet           
+20001d0f  SysCtlUSBPLLConfigGet           
+20001d2d  SysCtlEnableAERRNMI             
+20001d45  SysCtlGetNmiConfig              
+20001d51  SysCtlGetNmiInterruptStatus     
+20001d65  SysCtlGetNmiFlagStatus          
+20001d6d  SysCtlNmiIsSet                  
+20001d7f  SysCtlNmiFlgClr                 
+20001d97  SysCtlNmiFlgClrAll              
+20001db3  SysCtlHoldSubSystemInReset      
+20001dd9  SysCtlReleaseSubSystemFromReset 
+20001dfb  SysCtlSubSystemReset            
+20001e61  httpd_parse_command_word        
+20001ffd  CPUwfi                          
+20001ffd  SysCtlSleep                     
+20002d95  __TI_printfi                    
+2000309d  IPCLiteMtoCGetResult            
+200030c5  IPCLiteMtoCDataRead             
+20003103  IPCLiteMtoCSetBits              
+2000315b  IPCLiteMtoCSetBits_Protected    
+200031b3  IPCLiteMtoCClearBits            
+200031fb  IPCLiteMtoCClearBits_Protected  
+20003243  IPCLiteMtoCDataWrite            
+2000327d  IPCLiteMtoCDataWrite_Protected  
+200032b7  IPCLiteMtoCFunctionCall         
+200032e5  IPCLiteMtoCBootBranch           
+2000330d  IPCLiteCtoMDataRead             
+20003355  IPCLiteCtoMSetBits              
+200033b9  IPCLiteCtoMSetBits_Protected    
+20003431  IPCLiteCtoMClearBits            
+20003491  IPCLiteCtoMClearBits_Protected  
+20003507  IPCLiteCtoMDataWrite            
+20003561  IPCLiteCtoMDataWrite_Protected  
+200035c7  IPCLiteCtoMFunctionCall         
+20003621  main                            
+20003c03  GPIODirModeSet                  
+20003c33  GPIODirModeGet                  
+20003c5d  GPIOIntTypeSet                  
+20003ca3  GPIOIntTypeGet                  
+20003cdd  GPIOPadConfigSet                
+20003d37  GPIOPadConfigGet                
+20003d73  GPIOPinIntEnable                
+20003d7f  GPIOPinIntDisable               
+20003d8d  GPIOPinIntStatus                
+20003d9b  GPIOPinIntClear                 
+20003da1  GPIOPortIntRegister             
+20003db9  GPIOPortIntUnregister           
+20003dcd  GPIOPinRead                     
+20003dd3  GPIOPinWrite                    
+20003dd9  GPIOPinTypeCAN                  
+20003ded  GPIOPinTypeGPIOInput            
+20003e01  GPIOPinTypeGPIOOutput           
+20003e15  GPIOPinTypeGPIOOutputOD         
+20003e29  GPIOPinTypeGPIOOutputLow        
+20003e43  GPIOPinTypeGPIOOutputHigh       
+20003e5d  GPIOPinTypeI2C                  
+20003e71  GPIOPinTypeSSI                  
+20003e8d  GPIOPinTypeTimer                
+20003ea1  GPIOPinTypeUART                 
+20003eb9  GPIOPinTypeUSBDigital           
+20003ed1  GPIOPinTypeUSBAnalog            
+20003ee5  GPIOPinTypeEPI                  
+20003ef9  GPIOPinConfigure                
+20003f5f  GPIOPinConfigureCoreSelect      
+20003f7f  GPIOPinLockStatus               
+20003f89  GPIOPinLock                     
+20003faf  GPIOPinUnlock                   
+20003fe1  memchr                          
+20004901  uvsnprintf                      
+20004d33  IntMasterEnable                 
+20004d3d  IntMasterDisable                
+20004d47  IntFlashVTable                  
+20004d55  IntRAMVTable                    
+20004d63  IntRegister                     
+20004d8d  IntUnregister                   
+20004d97  IntPriorityGroupingSet          
+20004da9  IntPriorityGroupingGet          
+20004dcb  IntPrioritySet                  
+20004df7  IntPriorityGet                  
+20004e11  IntEnable                       
+20004e8d  IntDisable                      
+20004f0b  IntPendSet                      
+20004f77  IntPendClear                    
+20005001  ResetISR                        
+20005009  minit                           
+20005097  malloc                          
+200050ff  free                            
+200051c1  realloc                         
+200052cd  memalign                        
+200053b1  calloc                          
+200053e5  EthernetInitExpClk              
+200053f5  EthernetConfigSet               
+20005421  EthernetConfigGet               
+2000543b  EthernetMACAddrSet              
+20005469  EthernetMACAddrGet              
+20005493  EthernetEnable                  
+200054b5  EthernetDisable                 
+200054d7  EthernetPacketAvail             
+200054e5  EthernetSpaceAvail              
+2000557f  EthernetPacketGetNonBlocking    
+2000558f  EthernetPacketGet               
+2000561f  EthernetPacketPutNonBlocking    
+2000562f  EthernetPacketPut               
+20005639  EthernetIntRegister             
+20005649  EthernetIntUnregister           
+20005659  EthernetIntEnable               
+20005661  EthernetIntDisable              
+2000566b  EthernetIntStatus               
+20005677  EthernetIntClear                
+2000567b  EthernetPHYWrite                
+2000569b  EthernetPHYRead                 
+200056bb  EthernetPHYPowerOff             
+200056d7  EthernetPHYPowerOn              
+200056f9  write                           
+20005789  remove                          
+20005789  unlink                          
+200057ad  rename                          
+200057eb  remove_device                   
+20005813  read                            
+20005837  open                            
+200058e5  lseek                           
+20005909  close                           
+20005959  add_device                      
+20005a05  uDMAEnable                      
+20005a0d  uDMADisable                     
+20005a15  uDMAErrorStatusGet              
+20005a1d  uDMAErrorStatusClear            
+20005a27  uDMAChannelEnable               
+20005a35  uDMAChannelDisable              
+20005a43  uDMAChannelIsEnabled            
+20005a53  uDMAControlBaseSet              
+20005a5b  uDMAControlBaseGet              
+20005a63  uDMAControlAlternateBaseGet     
+20005a6b  uDMAChannelRequest              
+20005a7d  uDMAChannelAttributeEnable      
+20005abb  uDMAChannelAttributeDisable     
+20005af9  uDMAChannelAttributeGet         
+20005b49  uDMAChannelControlSet           
+20005b63  uDMAChannelTransferSet          
+20005bd9  uDMAChannelScatterGatherSet     
+20005c21  uDMAChannelSizeGet              
+20005c3d  uDMAChannelModeGet              
+20005c61  uDMAChannel0_7SelectDefault     
+20005c6d  uDMAChannel0_7SelectAltMapping  
+20005c77  uDMAChannel8_15SelectDefault    
+20005c85  uDMAChannel8_15SelectAltMapping 
+20005c91  uDMAChannel16_23SelectDefault   
+20005c9f  uDMAChannel16_23SelectAltMapping
+20005cab  uDMAChannel24_31SelectDefault   
+20005cb9  uDMAChannel24_31SelectAltMapping
+20005cc5  uDMAIntRegister                 
+20005cd5  uDMAIntUnregister               
+20005d01  HOSTwrite                       
+20005d4d  HOSTunlink                      
+20005d85  HOSTtime                        
+20005dbf  HOSTrename                      
+20005e1d  HOSTread                        
+20005e69  HOSTopen                        
+20005ebb  HOSTlseek                       
+20005f17  HOSTgetenv                      
+20005f55  HOSTclose                       
+20005f8d  HOSTclock                       
+20005fd5  SysTickIntHandler               
+20006001  strtod                          
+20006001  strtold                         
+20006435  uip_arp_out                     
+2000662d  __aeabi_uldivmod                
+200068e9  __TI_cleanup                    
+20006915  freopen                         
+2000693f  fopen                           
+200069e5  __aeabi_dsub                    
+200069ef  __aeabi_dadd                    
+20006b9d  httpd_appcall                   
+20006ed1  EthernetPacketGetDMA            
+20007165  __aeabi_ddiv                    
+2000729d  fputs                           
+200073a7  puts                            
+200073d1  uip_arp_arpin                   
+200074fd  _Dscale                         
+2000760d  RAMMReqSharedMemAccess          
+20007633  RAMControlInitM1MsgRam          
+2000769d  RAMControlInitL0L3Ram           
+20007715  __aeabi_dmul                    
+20007811  setvbuf                         
+200078ed  EthernetIntHandler              
+20007b4d  __TI_doflush                    
+20007b99  fflush                          
+20007c15  _Dnorm                          
+20007cd3  __aeabi_idiv0                   
+20007d85  WatchdogRunning                 
+20007d8d  WatchdogEnable                  
+20007d97  WatchdogResetEnable             
+20007da1  WatchdogResetDisable            
+20007dab  WatchdogLock                    
+20007db3  WatchdogUnlock                  
+20007dbb  WatchdogLockState               
+20007dc9  WatchdogReloadSet               
+20007dcd  WatchdogReloadGet               
+20007dd1  WatchdogValueGet                
+20007dd5  WatchdogIntRegister             
+20007de5  WatchdogIntUnregister           
+20007df5  WatchdogIntEnable               
+20007dff  WatchdogIntStatus               
+20007e09  WatchdogIntClear                
+20007e0f  WatchdogStallEnable             
+20007e1d  WatchdogStallDisable            
+20007e31  __TI_wrt_ok                     
+20007e93  __TI_rd_ok                      
+20007edd  uip_add32                       
+20007f85  __aeabi_memclr                  
+20007f85  __aeabi_memclr4                 
+20007f85  __aeabi_memclr8                 
+20007f87  __aeabi_memset                  
+20007f87  __aeabi_memset4                 
+20007f87  __aeabi_memset8                 
+20007f8d  memset                          
+ffffffff  __binit__                       
+ffffffff  __c_args__                      
+ffffffff  binit                           
+UNDEFED   SHT$$INIT_ARRAY$$Base           
+UNDEFED   SHT$$INIT_ARRAY$$Limit          
+
+[411 symbols]

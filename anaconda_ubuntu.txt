@@ -1,0 +1,17 @@
+export PATH="/home/fisher/anaconda3/bin:$PATH"
+
+Download <cuDNN Library for Linux>
+sudo cp cuda/include/cudnn.h /usr/local/cuda/include/
+sudo cp cuda/lib64/lib* /usr/local/cuda/lib64/
+
+
+numpy == 1.14.3
+tensorflow-gpu == 1.12.0
+CUDA == 9.0
+cuDNN == 7.6.2
+
+anaconda == 5.2.0
+
+
+pip install -U rosdep rosinstall_generator wstool rosinstall six vcstools
+

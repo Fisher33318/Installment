@@ -1,0 +1,33 @@
+1.添加伺服器&公鑰
+echo 'deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo xenial main' | sudo tee /etc/apt/sources.list.d/realsense-public.list
+sudo apt-key adv --keyserver keys.gnupg.net --recv-key 6F3EFCDE
+sudo apt-get update
+2.realsense-viewer演示安?
+sudo apt-get install librealsense2-dkms
+sudo apt-get install librealsense2-utils
+3.重新連接realsense並運行
+realsense-viewer
+
+
+librealsense安裝
+1.
+git clone https://github.com/IntelRealSense/librealsense librealsense
+2.更新
+sudo apt-get update && sudo apt-get upgrade
+3.安裝libusb-1.0和pkg-config
+sudo apt-get install libusb-1.0-0-dev pkg-config
+4.安裝GLFW3
+sudo apt-get install libglfw3-dev
+5.進入librealsense
+make build
+cd build
+cmake .. -DBUILD_EXAMPLES:BOOL=true
+make -j4
+sudo make install
+6.進入librealsense/build/examples/capture
+rs-capture
+
+
+安裝pyrealsense改第五步
+cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_EXAMPLES=true -DBUILD_PYTHON_BINDINGS=bool:true -DPYTHON_EXECUTABLE=/usr/bin/python2.7
+make -j4 && make install

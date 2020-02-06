@@ -1,0 +1,11 @@
+rename 's/\(|\[|\]|\)//g' *
+
+
+source activate ROS
+source /opt/ros/kinetic/setup.bash
+cd catkin_ws
+source devel/setup.bash
+
+
+merge error
+https://itsfoss.com/how-to-fix-problem-with-mergelist/
